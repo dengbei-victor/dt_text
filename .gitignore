@@ -1,0 +1,6 @@
+# created by virtualenv automatically
+images/
+input/
+output/
+test/
+venv/
