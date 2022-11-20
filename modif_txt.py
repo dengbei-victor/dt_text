@@ -1,17 +1,11 @@
-import os
+import glob
 
-files = []
-# Add the path of txt folder
-for i in os.listdir("test"):
-    if i.endswith('.txt'):
-        files.append(i)
-
-for item in files:
+for item in glob.glob('test/*'):
     # define an empty list
     file_data = []
 
     # open file and read the content in a list
-    with open("test/" + item, 'r') as myfile:
+    with open(item, 'r') as myfile:
         for line in myfile:
             # remove linebreak which is the last character of the string
             currentLine = line[:-1]
@@ -31,7 +25,7 @@ for item in files:
             i[0] = str(temp)
 
     # Write back to the file
-    f = open("output/" + item, 'w')
+    f = open(item, 'w')
     for i in file_data:
         res = ""
         for j in i:
